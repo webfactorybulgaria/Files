@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Files\Models;
 
-use Dimsav\Translatable\Translatable;
+use TypiCMS\Modules\Core\Traits\Translatable;
 use Laracasts\Presenter\PresentableTrait;
 use TypiCMS\Modules\Core\Models\Base;
 use TypiCMS\Modules\History\Traits\Historable;
@@ -42,7 +42,7 @@ class File extends Base
         'alt_attribute',
     ];
 
-    protected $appends = ['alt_attribute', 'description', 'thumb_src', 'thumb_sm'];
+    protected $appends = ['thumb_src', 'thumb_sm'];
 
     /**
      * Columns that are file.
@@ -61,24 +61,6 @@ class File extends Base
     public function gallery()
     {
         return $this->belongsTo('TypiCMS\Modules\Galleries\Models\Gallery');
-    }
-
-    /**
-     * Get translated title.
-     */
-    public function getTitleAttribute($value)
-    {
-        return $value;
-    }
-
-    /**
-     * Get translated alt attribute.
-     *
-     * @return string alt attribute
-     */
-    public function getAltAttributeAttribute()
-    {
-        return $this->alt_attribute;
     }
 
     /**
@@ -101,13 +83,4 @@ class File extends Base
         return $this->present()->thumbSrc(130, 130, [], 'file');
     }
 
-    /**
-     * Get translated description.
-     *
-     * @return string description
-     */
-    public function getDescriptionAttribute()
-    {
-        return $this->description;
-    }
 }

@@ -11,6 +11,6 @@ class FileTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Files\Models\File', 'file_id');
+        return $this->belongsTo('TypiCMS\Modules\Files\Models\File', 'file_id')->withoutGlobalScopes();
     }
 }
