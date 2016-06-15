@@ -1,6 +1,15 @@
+@extends('core::admin.master')
+
+@section('title', trans('files::global.name'))
+
+@section('main')
+
 <div ng-app="typicms" ng-cloak ng-controller="ListController">
 
-    <a id="uploaderAddButtonContainer" href="#" class="btn-add"><i id="uploaderAddButton" class="fa fa-plus-circle"></i><span class="sr-only">@{{ ucfirst(trans('files::global.New')) }}</span></a>
+    <a id="uploaderAddButtonContainer" href="#" class="btn-add" title="@lang('files::global.New')">
+        <i id="uploaderAddButton" class="fa fa-plus-circle"></i><span class="sr-only">@lang('files::global.New')</span>
+    </a>
+
     <h1>
         <span>@{{ models.length }} @choice('files::global.files', 2)</span>
     </h1>
@@ -45,7 +54,7 @@
                 <tr ng-repeat="model in displayedModels">
                     <td typi-btn-delete action="delete(model, model.file)"></td>
                     <td>
-                        @include('core::admin._button-edit')
+                        @include('core::admin._button-edit', ['module' => 'files'])
                     </td>
                     <td>@{{ model.created_at | dateFromMySQL:'short' }}</td>
                     <td>@{{ model.type }}</td>
@@ -69,3 +78,5 @@
     </div>
 
 </div>
+
+@endsection

@@ -66,21 +66,20 @@ class File extends Base
     /**
      * Get thumb attribute from presenter.
      *
-     * @return string src
+     * @return string
      */
-    public function getThumbSrcAttribute($value)
+    public function getThumbSrcAttribute()
     {
         return $this->present()->thumbSrc(null, 22, [], 'file');
     }
 
     /**
-     * Get thumb attribute from presenter.
+     * Append thumb_sm attribute from presenter.
      *
-     * @return string src
+     * @return string
      */
-    public function getThumbSmAttribute($value)
+    public function getThumbSmAttribute()
     {
         return $this->present()->thumbSrc(130, 130, [], 'file');
     }
-
 }
