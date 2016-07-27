@@ -20,7 +20,7 @@ class ApiController extends BaseApiController
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index($builder = null)
     {
         $gallery_id = Request::input('gallery_id');
         $type = Request::input('type');
