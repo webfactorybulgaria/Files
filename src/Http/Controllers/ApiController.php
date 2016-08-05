@@ -3,10 +3,10 @@
 namespace TypiCMS\Modules\Files\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Core\Http\Controllers\BaseApiController;
-use TypiCMS\Modules\Files\Http\Requests\FormRequest;
-use TypiCMS\Modules\Files\Models\File;
-use TypiCMS\Modules\Files\Repositories\FileInterface as Repository;
+use TypiCMS\Modules\Core\Custom\Http\Controllers\BaseApiController;
+use TypiCMS\Modules\Files\Custom\Http\Requests\FormRequest;
+use TypiCMS\Modules\Files\Custom\Models\File;
+use TypiCMS\Modules\Files\Custom\Repositories\FileInterface as Repository;
 
 class ApiController extends BaseApiController
 {
@@ -41,7 +41,7 @@ class ApiController extends BaseApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \TypiCMS\Modules\Files\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Files\Custom\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -59,8 +59,8 @@ class ApiController extends BaseApiController
     /**
      * Update the specified resource in storage.
      *
-     * @param \TypiCMS\Modules\Files\Models\File               $file
-     * @param \TypiCMS\Modules\Files\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Files\Custom\Models\File               $file
+     * @param \TypiCMS\Modules\Files\Custom\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -76,7 +76,7 @@ class ApiController extends BaseApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param \TypiCMS\Modules\Files\Models\File $file
+     * @param \TypiCMS\Modules\Files\Custom\Models\File $file
      *
      * @return \Illuminate\Http\JsonResponse
      */

@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Files\Models;
 
-use TypiCMS\Modules\Core\Traits\Translatable;
+use TypiCMS\Modules\Core\Custom\Traits\Translatable;
 use Laracasts\Presenter\PresentableTrait;
-use TypiCMS\Modules\Core\Models\Base;
-use TypiCMS\Modules\History\Traits\Historable;
+use TypiCMS\Modules\Core\Custom\Models\Base;
+use TypiCMS\Modules\History\Custom\Traits\Historable;
 
 class File extends Base
 {
@@ -13,7 +13,7 @@ class File extends Base
     use Translatable;
     use PresentableTrait;
 
-    protected $presenter = 'TypiCMS\Modules\Files\Presenters\ModulePresenter';
+    protected $presenter = 'TypiCMS\Modules\Files\Custom\Presenters\ModulePresenter';
 
     protected $fillable = [
         'gallery_id',
@@ -60,7 +60,7 @@ class File extends Base
      */
     public function gallery()
     {
-        return $this->belongsTo('TypiCMS\Modules\Galleries\Models\Gallery');
+        return $this->belongsTo('TypiCMS\Modules\Galleries\Custom\Models\Gallery');
     }
 
     /**

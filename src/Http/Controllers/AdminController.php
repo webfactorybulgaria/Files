@@ -4,10 +4,10 @@ namespace TypiCMS\Modules\Files\Http\Controllers;
 
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Files\Http\Requests\FormRequest;
-use TypiCMS\Modules\Files\Models\File;
-use TypiCMS\Modules\Files\Repositories\FileInterface;
+use TypiCMS\Modules\Core\Custom\Http\Controllers\BaseAdminController;
+use TypiCMS\Modules\Files\Custom\Http\Requests\FormRequest;
+use TypiCMS\Modules\Files\Custom\Models\File;
+use TypiCMS\Modules\Files\Custom\Repositories\FileInterface;
 
 class AdminController extends BaseAdminController
 {
@@ -57,7 +57,7 @@ class AdminController extends BaseAdminController
     /**
      * Edit form for the specified resource.
      *
-     * @param \TypiCMS\Modules\Files\Models\File $file
+     * @param \TypiCMS\Modules\Files\Custom\Models\File $file
      *
      * @return \Illuminate\View\View
      */
@@ -70,7 +70,7 @@ class AdminController extends BaseAdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \TypiCMS\Modules\Files\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Files\Custom\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -84,8 +84,8 @@ class AdminController extends BaseAdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param \TypiCMS\Modules\Files\Models\File               $file
-     * @param \TypiCMS\Modules\Files\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Files\Custom\Models\File               $file
+     * @param \TypiCMS\Modules\Files\Custom\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */

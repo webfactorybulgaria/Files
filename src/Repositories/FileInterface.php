@@ -4,7 +4,7 @@ namespace TypiCMS\Modules\Files\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
 use stdClass;
-use TypiCMS\Modules\Core\Repositories\RepositoryInterface;
+use TypiCMS\Modules\Core\Custom\Repositories\RepositoryInterface;
 
 interface FileInterface extends RepositoryInterface
 {
