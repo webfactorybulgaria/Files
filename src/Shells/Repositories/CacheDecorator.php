@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Files\Custom\Repositories;
+namespace TypiCMS\Modules\Files\Shells\Repositories;
 
 use TypiCMS\Modules\Files\Repositories\CacheDecorator as Base;
 

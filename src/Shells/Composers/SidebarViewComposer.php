@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Files\Custom\Composers;
+namespace TypiCMS\Modules\Files\Shells\Composers;
 
 use TypiCMS\Modules\Files\Composers\SidebarViewComposer as Base;
 
