@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Files\Shells\Repositories;
 
-use TypiCMS\Modules\Files\Repositories\FileInterface as Base;
+use TypiCMS\Modules\Files\Repositories\FileInterface as BaseInterface;
 
-interface FileInterface extends Base
+interface FileInterface extends BaseInterface
 {
 
 }
