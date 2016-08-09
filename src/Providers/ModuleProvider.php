@@ -5,11 +5,11 @@ namespace TypiCMS\Modules\Files\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Core\Observers\FileObserver;
-use TypiCMS\Modules\Core\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Files\Models\File;
-use TypiCMS\Modules\Files\Repositories\CacheDecorator;
-use TypiCMS\Modules\Files\Repositories\EloquentFile;
+use TypiCMS\Modules\Core\Shells\Observers\FileObserver;
+use TypiCMS\Modules\Core\Shells\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Files\Shells\Models\File;
+use TypiCMS\Modules\Files\Shells\Repositories\CacheDecorator;
+use TypiCMS\Modules\Files\Shells\Repositories\EloquentFile;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -34,7 +34,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Files',
-            'TypiCMS\Modules\Files\Facades\Facade'
+            'TypiCMS\Modules\Files\Shells\Facades\Facade'
         );
 
         // Observers
@@ -48,14 +48,14 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Files\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Files\Shells\Providers\RouteServiceProvider');
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Files\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Files\Shells\Composers\SidebarViewComposer');
 
-        $app->bind('TypiCMS\Modules\Files\Repositories\FileInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Files\Shells\Repositories\FileInterface', function (Application $app) {
             $repository = new EloquentFile(new File());
             if (!config('typicms.cache')) {
                 return $repository;

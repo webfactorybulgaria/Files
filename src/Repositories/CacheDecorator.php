@@ -3,8 +3,8 @@
 namespace TypiCMS\Modules\Files\Repositories;
 
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Core\Repositories\CacheAbstractDecorator;
-use TypiCMS\Modules\Core\Services\Cache\CacheInterface;
+use TypiCMS\Modules\Core\Shells\Repositories\CacheAbstractDecorator;
+use TypiCMS\Modules\Core\Shells\Services\Cache\CacheInterface;
 
 class CacheDecorator extends CacheAbstractDecorator implements FileInterface
 {
