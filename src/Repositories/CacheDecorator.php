@@ -24,7 +24,7 @@ class CacheDecorator extends CacheAbstractDecorator implements FileInterface
      */
     public function all(array $with = [], $all = false)
     {
-        $cacheKey = md5(config('app.locale').'all'.serialize($with).$all.serialize(Request::except('page')));
+        $cacheKey = md5($this->cachePrefix().'all'.serialize($with).$all.serialize(Request::except('page')));
 
         if ($this->cache->has($cacheKey)) {
             return $this->cache->get($cacheKey);
@@ -60,7 +60,7 @@ class CacheDecorator extends CacheAbstractDecorator implements FileInterface
         $type = null
     ) {
         $cacheKey = md5(
-            config('app.locale').
+            $this->cachePrefix().
             'byPageFrom'.
             $page.
             $limit.
